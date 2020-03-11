@@ -27,66 +27,64 @@ Pada projek _Fitness Companion_ _Apps_.
 
 1. Kamu akan membuat sebuah **aplikasi yang dapat mengatur workout harian**
 
-2. Memberikan **tips workout berdasarkan template** yang tersedia
+2. **Menampilkan detail workout berdasarkan card yang tersedia**
 
-3. Projek ini menitikberatkan **penggunaan Vue untuk memaintain aspek front-end dan Express untuk memaintain aspek backend** nya
-
-#### Get the Project
-
-Ada beberapa opsi untuk memulai projek ini, yaitu:
-
-* forking dan cloning repository yang disedikan di Git (TBA)
-* mulai dari 0 dengan membuat file sendiri
-
-#### Starter Code
-
-Jika kamu lebih suka menggunakan laptop pribadi, silahkan lakukan forking dan cloning starter repository.
-
-**Kode yang terdapat dalam starter repository memiliki CSS dan markup HTML yang bisa digunakan, namun belum ada kode JS**. Cara ini dapat dimanfaatkan untuk menyelesaikan projek, jika kamu tidak mau membuat keseluruhan CSS dan HTML dari 0, maka cara ini dapat mempersingkat waktu. Kode yang tersedia akan mendemonstrasikan sebuah halaman HTML statis dari aplikasi yang kamu buat. Sebagai catatan, page tersebut tidak dapat mendemonstrasikan fungsi secara interaktif.
-
-Kamu juga bisa menggunakan css framework seperti bootstrap untuk mempercantik tampilannya.
+3. Projek ini menitikberatkan **penggunaan Vue untuk memaintain aspek frontend dan Express untuk memaintain aspek backend** nya
 
 #### Starting from Scratch
 
-**Jika kamu memilih untuk mengerjakan semuanya dari 0, kamu bisa mulai dengan membuat sendiri file index.html hingga file CSS dan JavaScript yang dibutuhkan.**
+**Kerjakan semuanya dari 0, kamu bisa mulai dengan membuat server menggunakan express.js kemudian membuat project vue menggunakan vue CLI (recomended) atau CDN, serta menambahkan CSS dan JavaScript yang dibutuhkan.**
 
-Kamu juga bisa menggunakan css framework seperti bootstrap untuk mempercantik tampilannya.
+Kamu juga bisa menggunakan CSS framework seperti bootstrap untuk mempercantik tampilannya. Namun untuk bootsrap di vue menggunakan [vue boostrap component](https://bootstrap-vue.js.org/), berbeda dengan framework CSS bootstrap biasa.
+
+Berikut adalah beberapa pilihan CSS framework untuk vue.js yang bisa digunakan:
+
+* [Vuetify](https://vuetifyjs.com/en/)
+* [Vue Bootstrap](https://bootstrap-vue.js.org/)
+* [Vue Material](https://vuematerial.io/)
+* [Vue Semantic UI](https://semantic-ui-vue.github.io/#/)
+* [Vue Tailwind](https://vue-tailwind.com/)
+* [Buefy](https://buefy.org/)
 
 #### App Functionality
 
 Dalam aplikasi ini, main page akan:
 
-1. Menampilkan 2 tombol atau link untuk menuju ke Personal Workout dan Precompiled Workout.
+1. Menampilkan 2 card atau button untuk menuju ke Personal Workout dan Heroes Workout.
 
-    > **Personal Workout** adalah workout yang ditentukan oleh user sesuai dengan kebutuhan.
+   Contohnya bisa dilihat seperti gambar di bawah ini:
 
-    > Sedangkan **Precompiled Workout** adalah rangkaian workout yang tersedia dengan nama-nama superhero \(seperti Batman Workout yang berisikan: 20 squats, 40 punches, etc\).
+   ![Fitness Homepage](img/2-1.png)
 
-    Contohnya bisa dilihat seperti gambar di bawah ini: ![Fitness Homepage](img/screen-shot-2019-10-24-at-17.39.40.png)
+    * **Personal Workout** adalah list workout yang diperuntukkan untuk user personal.
 
-2. Saat user mengakses **Personal Workout**, user seharusnya:
+    * Sedangkan **Heroes Workout** adalah rangkaian workout yang tersedia dengan nama-nama superhero \(seperti Batman Workout yang berisikan: 20 squats, 40 punches, etc\).
 
-    > Melihat **input text dan tombol add** untuk menambahkan personal workout baru.
+2. Saat user mengakses **Personal Workout**, user mendapatkan tampilan seperti berikut:
 
-    > User juga akan mendapatkan **daftar personal workout** yang sudah terdaftar, sekaligus **checkbox pada setiap workout yang dapat di-checklist ketika workout sudah dikerjakan**.
+    ![Personal Workout](img/2-2.png)
 
-    Contohnya sebagai berikut: ![Personal Workout](img/screen-shot-2019-10-24-at-18.09.34.png)
+    * User mendapatkan **daftar personal workout** yang data JSON-nya diambil dari backend menggunakan axios atau fetch API dan **checkbox pada setiap workout yang dapat di-checklist ketika workout sudah dikerjakan**.
 
-3. Ketika user mengakses **Precompiled Workout (Hero Workout)**, user seharusnya:
+3. Ketika user mengakses **Heroes Workout (Hero Workout)**, user mendapatkan tampilan seperti berikut:
 
-    > **Melihat daftar workouts yang sudah diatur (precompiled) dengan data yang diambil dari json**.
+    ![Hero Homepage](img/2-3.png)
 
-    > Setiap workout **berisikan gambar dan judul workout**.
+    * ***Melihat daftar workouts yang sudah diatur (Heroes) dengan data berupa JSON yang diambil dari backend menggunakan axios atau fetch API**.
 
-    > User dapat **mengklik tombol detail** pada workout tersebut, sehingga **muncul judul dan daftar gerakan** yang harus diselesaikan.
+    * Setiap workout **berisikan gambar, judul workout, dan button "details"**.
 
-    Contohnya sebagai berikut: ![Hero Homepage](img/screen-shot-2019-10-24-at-17.46.53.png)
+    Ketika **button details diklik:**
 
-    Ketika tombol details diklik: ![Hero Modal](img/screen-shot-2019-10-24-at-17.56.40.png)
+    ![Hero Modal](img/2-4.png)
 
-4. Halaman Hero Workout juga memiliki **search form**, di mana search form ini berguna untuk mencari Hero Workout tertentu dan melihat detailnya.
+    * Ketika button "details" diklik, akan **muncul judul dan daftar gerakan** yang harus dilakukan.
 
-    > Search form tersebut memiliki **text input yang dapat digunakan untuk langsung mem-filter workout**. Saat value yang ada pada text input berubah, workout yang cocok dengan inputan tersebut akan muncul.
+4. Halaman Heroes Workout juga memiliki **search form**, di mana search form ini berguna untuk mencari Heroes Workout tertentu dan melihat detailnya, seperti gambar di bawah ini:
+
+    ![Search bar](img/2-5.png)
+
+    * Search form tersebut memiliki **text input yang dapat digunakan untuk langsung mem-filter workout**. Saat value yang ada pada text input berubah, workout yang cocok dengan inputan tersebut akan muncul.
 
 #### Submission Requirements
 
@@ -115,7 +113,7 @@ Upload zip file kamu ke Hacktiv8 Online Program Projek submission.
 User story adalah deskripsi yang menjelaskan fungsionalitas aplikasi. Untuk melengkapi proyek ini, kamu harus membangun sebuah aplikasi yang meliputi semua fungsionalitas dari user story di bawah ini.
 
 **Expressjs (backend) User Story**\
-**User Story \# 1** - My Fitness Companion **setidaknya** memiliki route berikut untuk precompiled pages: `/heroes`, `/heroes/:heroId`.
+**User Story \# 1** - My Fitness Companion **setidaknya** memiliki route berikut untuk Heroes pages: `/heroes`, `/heroes/:heroId`.
 
 * Route GET `/heroes` digunakan untuk mengambil data dari JSON File heroesList.json.
 * Route GET `/heroes/:heroId` digunakan untuk mengambil data spesifik berdasarkan ID dari JSON File dengan nama heroesList.json. Route ini juga bisa digunakan untuk mendapatkan workout detail.
@@ -140,7 +138,7 @@ User story adalah deskripsi yang menjelaskan fungsionalitas aplikasi. Untuk mele
 
 **User Story \# 3** - Komponen `Judul.vue` harus **memiliki elemen H1, di mana elemen ini berisikan teks yang menjadi judul website**, yaitu *My Fitness Companion*.
 
-**User Story \# 4** - Komponen `Home.vue` **harus memiliki 2 card** yang masing-masing memiliki `<button>` untuk menuju ke Personal atau Hero Workout. **Tombol ini harus memiliki route yang dibuat menggunakan vue-router, untuk bernavigasi ke komponen `PersonalWorkout.vue` maupun `HeroWorkout.vue`.**
+**User Story \# 4** - Komponen `Home.vue` **harus memiliki 2 card** yang masing-masing memiliki `<button>` untuk menuju ke Personal atau Hero Workout. **Button ini harus memiliki route yang dibuat menggunakan vue-router, untuk bernavigasi ke komponen `PersonalWorkout.vue` maupun `HeroWorkout.vue`.**
 
 Contoh tampilan gabungan komponen `Navbar.vue`, `Judul.vue`, dan `Home.vue` nya adalah sebagai berikut: ![Homepage](img/screen-shot-2019-10-24-at-17.39.40.png)
 
@@ -156,11 +154,11 @@ Contoh tampilan gabungan komponen `Navbar.vue`, `Judul.vue`, dan `Home.vue` nya 
 
     * Nama workout dalam `class="card-title"` dan deskripsi workout pada `class="card-text"`
     * Ingat! Semua data tersebut harus di-fetch menggunakan fetch API atau axios dengan route GET `/heroes`
-    * Bagian `class="card-footer"` harus memiliki tombol **Details**
+    * Bagian `class="card-footer"` harus memiliki button **Details**
 
     Contoh tampilan gabungan komponen `Navbar.vue`, `Judul.vue`, dan `HeroWorkout.vue` (jika data hero workoutnya hanya ada 3, dengan title: Green Smash, Stripped Captain, dan Steel Muscle) adalah sebagai berikut: ![Details](img/screen-shot-2019-10-24-at-17.46.53.png)
 
-4. Saat mengklik tombol **Details**, My Fitness Companion harus menampilkan ***popup modal box*** yang berisikan **Workout Title**, **deskripsi singkat workout**, dan **exercise data** melalui API berdasarkan ID menggunakan route `/heroes/:heroId`.
+4. Saat mengklik button **Details**, My Fitness Companion harus menampilkan ***popup modal box*** yang berisikan **Workout Title**, **deskripsi singkat workout**, dan **exercise data** melalui API berdasarkan ID menggunakan route `/heroes/:heroId`.
 
     Di bawah ini adalah contoh tampilan salah satu hero workout dengan popup modal berdasarkan ID ketika user mengklik details. Gambar di bawah ini memiliki:
     * **Workout title**: Green Smash
@@ -297,20 +295,20 @@ Jika semua hal di atas terpenuhi, projek kamu sudah bisa di-submit.
 | Personal Workout Page |  |
 | :--- | :--- |
 | CRITERIA | SPECIFICATIONS |
-| Apakah halaman Personal Workout menampilkan form input? | Halaman Personal Workout menampilkan form, di mana form tersebut berbentuk workout input dan tombol add. |
+| Apakah halaman Personal Workout menampilkan form input? | Halaman Personal Workout menampilkan form, di mana form tersebut berbentuk workout input dan button add. |
 
-| Precompiled Workout Page |  |
+| Heroes Workout Page |  |
 | :--- | :--- |
 | CRITERIA | SPECIFICATIONS |
-| Apakah halaman Precompiled menunjukkan daftar Precompiled Workout? | The Precompiled Page menunjukkan daftar semua workout. Setiap workout menunjukkan konten yang benar, title, dan tombol detail. |
-| Apakah Precompiled Page memiliki search bar? | Ya, search bar terletak di navigation bar (di bagian atas halaman). |
+| Apakah halaman Heroes menunjukkan daftar Heroes Workout? | The Heroes Page menunjukkan daftar semua workout. Setiap workout menunjukkan konten yang benar, title, dan button detail. |
+| Apakah Heroes Page memiliki search bar? | Ya, search bar terletak di navigation bar (di bagian atas halaman). |
 
 | Code Functionality |  |
 | :--- | :--- |
 | CRITERIA | SPECIFICATIONS |
 | Apakah search berfungsi? | Fungsi search pada search bar bekerja saat user mengetik karakter apapun pada search bar. Di saat yang sama, workout yang muncul akan ter-filter sesuai dengan input tadi. |
-| Apakah tombol detail pada Precompiled Workout bekerja? | Tombol tersebut akan bekerja ketika ada interaksi yang menampilkan modal, di mana modal tersebut berisikan detail dari Precompiled Workout. |
+| Apakah button detail pada Heroes Workout bekerja? | Button tersebut akan bekerja ketika ada interaksi yang menampilkan modal, di mana modal tersebut berisikan detail dari Heroes Workout. |
 | Apakah add workout pada Personal Workout bekerja? | User dapat meng-input jenis-jenis workout di input form. Saat mengklik add, value baru akan muncul sesuai dengan input. |
 | Apakah checkbox pada Personal Workout bekerja? | User dapat berinteraksi dengan checkbox di setiap workout pada halaman Personal Workout. Saat mengklik checkbox, font yang ada akan menjadi strikethrough. |
-| Apakah halaman navigasi bekerja? | User dapat bernavigasi dari main page ke Personal ataupun Precompiled Workout tanpa halangan. Proses tersebut dapat dilakukan secara terbalik. |
+| Apakah halaman navigasi bekerja? | User dapat bernavigasi dari main page ke Personal ataupun Heroes Workout tanpa halangan. Proses tersebut dapat dilakukan secara terbalik. |
 | Apakah kode yang ada berjalan tanpa error? | Ya, kode yang ada dapat berjalan tanpa error. Tidak ada peringatan yang menunjukkan tanda error, karena daftar yang ada pada dokumentasi sudah termasuk best practice. Semua kode bersifat fungsional dan terformat dengan baik. |
