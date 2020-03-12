@@ -121,9 +121,11 @@ Projek kamu akan dievaluasi oleh Hacktiv8 *Online Code Reviewer*, sesuai dengan 
 
 #### Submission Instructions
 
-Jika kamu memilih untuk menggunakan laptop atau komputer pribadi, kamu harus:
+Kamu harus:
 
-* **Upload zip file kamu ke *Hacktiv8 Online Program Projek submission***
+* **Upload zip file kamu ke Hacktiv8 *Online Program Projek submission*** dengan **mengklik button upload project** seperti di bawah ini:
+
+![submission](img/0.png)
 
 ### User Story
 

@@ -98,67 +98,70 @@ Fokus pada projek ini adalah penggunaan Vue dan Nodejs nya, jadi estetika proyek
 
 #### How will this project be evaluated
 
-Proyek kamu akan dievaluasi oleh Hacktiv8 Online Code Reviewer, sesuai dengan rubrik. Periksa kembali proyek kamu sebelum disubmit. Semua kriteria harus sesuai dengan standar yang ditentukan agar dapat diterima.
+Proyek kamu akan dievaluasi oleh Hacktiv8 *Online Code Reviewer*, sesuai dengan rubrik. Periksa kembali proyek kamu sebelum disubmit. Semua kriteria harus sesuai dengan standar yang ditentukan agar dapat diterima.
 
-Rubrik proyek adalah satu-satunya sumber materi untuk membuat projek. Jangan lupa untuk menyimpannya ke bookmark browser sehingga dapat diakses dengan mudah.
+> Rubrik proyek adalah satu-satunya sumber materi untuk membuat projek. Jangan lupa untuk menyimpannya ke bookmark browser sehingga dapat diakses dengan mudah.
 
 #### Submission Instructions
 
-Jika kamu memilih untuk menggunakan laptop/komputer pribadi, kamu harus:
+Kamu harus:
 
-Upload zip file kamu ke Hacktiv8 Online Program Projek submission.
+* **Upload zip file kamu ke Hacktiv8 *Online Program Projek submission*** dengan **mengklik button upload project** seperti di bawah ini:
+
+![submission](img/0.png)
 
 ### User Story
 
-User story adalah deskripsi yang menjelaskan fungsionalitas aplikasi. Untuk melengkapi proyek ini, kamu harus membangun sebuah aplikasi yang meliputi semua fungsionalitas dari user story di bawah ini.
+*User story* adalah deskripsi yang menjelaskan fungsionalitas aplikasi. Untuk melengkapi proyek ini, kamu harus membangun sebuah aplikasi yang meliputi semua fungsionalitas dari *user story* di bawah ini:
 
-**Expressjs (backend) User Story**\
+✨ **Expressjs (backend) User Story**\
 **User Story \# 1** - My Fitness Companion **setidaknya** memiliki route berikut untuk Heroes pages: `/heroes`, `/heroes/:heroId`.
 
 * Route GET `/heroes` digunakan untuk mengambil data dari JSON File heroesList.json.
-* Route GET `/heroes/:heroId` digunakan untuk mengambil data spesifik berdasarkan ID dari JSON File dengan nama heroesList.json. Route ini juga bisa digunakan untuk mendapatkan workout detail.
+* Route GET `/heroes/:heroId` digunakan untuk mengambil data spesifik berdasarkan ID dari JSON File heroesList.json. Route ini akan digunakan untuk mendapatkan workout detail dan menampilkan datanya menggunakan modal.
 
-**User Story \# 2** - My Fitness Companion setidaknya memiliki route berikut untuk personal pages: `/personals`, `/personals/:personalId`.
+**User Story \# 2** - My Fitness Companion setidaknya memiliki route berikut untuk personal pages: `/personals`.
 
 * Route GET `/personals` digunakan untuk mengambil data dari JSON File personalList.json.
-* Route GET `/personals/:personalId` digunakan untuk mengambil data  berdasarkan ID dari JSON File personalList.json.
-* Route POST `/personals` digunakan untuk membuat data workout baru dari JSON File personalList.json.
-* Route PUT `/personals/:personalId` digunakan untuk meng-update workout tertentu berdasarkan ID saat user men-check komponen checkbox dan mengklik button update.
-* Route DELETE `/personals/:personalId` digunakan untuk menghapus workout tertentu berdasarkan ID saat user men-check komponen checkbox dan mengklik button delete.
 
 **User Story \# 3** -  Aplikasi ini harus berjalan pada port 8080.
 
-**Vue (frontend) User Story**\
-**User Story \# 1** - My Fitness Companion setidaknya memiliki sebuah komponen `Navbar.vue`, komponen `Judul.vue`, komponen `Home.vue`, komponen `About.vue`, komponen `PersonalWorkout.vue`, komponen `HeroWorkout.vue`, dan vue-router yang bertugas untuk mengatur komponen mana yang akan ditampilkan ketika suatu button diklik.
+✨ **Vue (frontend) User Story**\
+**User Story \# 1** - My Fitness Companion setidaknya memiliki sebuah komponen `Header.vue`, komponen `Body.vue`, komponen `PersonalWorkout.vue`, komponen `HeroWorkout.vue`, dan vue-router yang bertugas untuk mengatur komponen mana yang akan ditampilkan ketika suatu button diklik & menampilkan detail Heroes Workout mana sesuai card yang diklik.
 
-**User Story \# 2** - Komponen `Navbar.vue` tersebut harus berada di bagian atas website. Komponen `Navbar.vue` juga berisi menu home dan about. Di mana:
+**User Story \# 2** - Komponen `Header.vue` tersebut harus berada di bagian atas website. Komponen `Header.vue` juga berisi menu home dan about.
 
-* Menu home akan merujuk pada komponen `Home.vue`
-* Menu about akan merujuk pada komponen `About.vue`
+**User Story \# 3** - Komponen `Body.vue` **harus memiliki 2 card** yang masing-masing memiliki `<button>` untuk menuju ke Personal atau Hero Workout. **Button ini harus memiliki route yang dibuat menggunakan vue-router, untuk bernavigasi ke komponen `PersonalWorkout.vue` (jika personal yang diklik) maupun `HeroWorkout.vue` (jika heroes yang diklik).**
 
-**User Story \# 3** - Komponen `Judul.vue` harus **memiliki elemen H1, di mana elemen ini berisikan teks yang menjadi judul website**, yaitu *My Fitness Companion*.
+Contoh tampilan gabungan komponen `Header.vue` dan `Body.vue` nya adalah sebagai berikut:
 
-**User Story \# 4** - Komponen `Home.vue` **harus memiliki 2 card** yang masing-masing memiliki `<button>` untuk menuju ke Personal atau Hero Workout. **Button ini harus memiliki route yang dibuat menggunakan vue-router, untuk bernavigasi ke komponen `PersonalWorkout.vue` maupun `HeroWorkout.vue`.**
+![Homepage](img/2-1.png)
 
-Contoh tampilan gabungan komponen `Navbar.vue`, `Judul.vue`, dan `Home.vue` nya adalah sebagai berikut: ![Homepage](img/screen-shot-2019-10-24-at-17.39.40.png)
+**User Story \# 4** - Jika kamu ingin membuat isi dari menu about juga. Kamu bisa membuat komponen `About.vue`, komponen ini bisa berisi keterangan tentang website yang dibuat. Tapi ini tidak wajib.
 
-**User Story \# 5** - Komponen `About.vue` berisi keterangan tentang website yang dibuat. Isinya disesuaikan dengan README yang nanti akan kamu dibuat juga sebagai panduan penggunaan website ini.
+**User Story \# 5** - Di dalam komponen `HeroWorkout.vue` buatlah *container* (bisa berupa elemen `<div>` yang diberikan class atau container bawaan dari css framework yang digunakan) untuk menampung semua card yang berisi workout. Selanjutnya:
 
-**User Story \# 6** - Komponen `HeroWorkout.vue` harus menggunakan card dengan `class="card-deck"`.
+1. **Container nantinya akan digunakan untuk menampung semua card Heroes Workout** yang ada terdapat pada JSON. Contoh container yang sudah diisikan semua card tampilannya akan seperti ini:
 
-1. `class="card-deck"` ini nantinya akan digunakan untuk menampung semua data hero workout yang ada di dalam file json.
+    ![container](img/2-6.png)
 
-2. Kamu harus mem-fetch atau mengambil data hero workout melalui API dalam bentuk json yang telah dibuat menggunakan express. Kemudian menampilkan seluruh isinya di `class="card-deck"` menggunakan `v-for`.
+2. Kamu harus mem-fetch atau mengambil data Heroes Workout melalui API/URL yang telah dibuat di express.js menggunakan axios. Kemudian tampilkan seluruh isinya di container yang telah dibuat, menggunakan perulangan. Sehingga semua card akan otomatis tampil sebanyak data workout yang ada di dalam JSON. Contoh card yang ditembak ke dalam container > row menggunakan `v-for` dapat dilihat pada gambar di bawah ini:
 
-3. **Setiap data hero workout harus ditampilkan dengan card**. Pada bagian ***card body*** nya harus berisikan:
+    ![v-for](img/2-7.png)
 
-    * Nama workout dalam `class="card-title"` dan deskripsi workout pada `class="card-text"`
-    * Ingat! Semua data tersebut harus di-fetch menggunakan fetch API atau axios dengan route GET `/heroes`
-    * Bagian `class="card-footer"` harus memiliki button **Details**
+    > Pada contoh di atas `v-for` menampilkan semua item yang tersimpan di dalam workout, yang sudah diisikan data dari API. Pastikan di dalam Vue sudah terdapat attribute dengan nama workout seperti ini `data: {workout: [],}` yang sudah diisikan data dari API juga
 
-    Contoh tampilan gabungan komponen `Navbar.vue`, `Judul.vue`, dan `HeroWorkout.vue` (jika data hero workoutnya hanya ada 3, dengan title: Green Smash, Stripped Captain, dan Steel Muscle) adalah sebagai berikut: ![Details](img/screen-shot-2019-10-24-at-17.46.53.png)
+3. **Setiap data Heroes Workout ditampilkan dengan card** yang berisikan:
 
-4. Saat mengklik button **Details**, My Fitness Companion harus menampilkan ***popup modal box*** yang berisikan **Workout Title**, **deskripsi singkat workout**, dan **exercise data** melalui API berdasarkan ID menggunakan route `/heroes/:heroId`.
+    * Nama workout
+    * Deskripsi workout
+    * Button **Details**
+
+    Contoh tampilan gabungan komponen `Header.vue` dan `HeroWorkout.vue` (jika data hero workoutnya hanya ada 3, dengan title: Bat Ability, Bat Punch, dan Steel Muscle) adalah sebagai berikut:
+
+    ![Details](img/2-3.png)
+
+4. Saat mengklik button **Details**, My Fitness Companion menampilkan ***popup modal box*** yang berisikan **Workout Title**, **deskripsi singkat workout**, dan **exercise data** melalui API berdasarkan ID menggunakan route `/heroes/:heroId`.
 
     Di bawah ini adalah contoh tampilan salah satu hero workout dengan popup modal berdasarkan ID ketika user mengklik details. Gambar di bawah ini memiliki:
     * **Workout title**: Green Smash
