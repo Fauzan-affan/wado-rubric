@@ -139,7 +139,7 @@ Contoh tampilan gabungan komponen `Header.vue` dan `Body.vue` nya adalah sebagai
 
 **User Story \# 4** - Jika kamu ingin membuat isi dari menu about juga. Kamu bisa membuat komponen `About.vue`, komponen ini bisa berisi keterangan tentang website yang dibuat. Tapi ini tidak wajib.
 
-**User Story \# 5** - Di dalam komponen `HeroWorkout.vue` buatlah *container* (bisa berupa elemen `<div>` yang diberikan class atau container bawaan dari css framework yang digunakan) untuk menampung semua card yang berisi workout. Selanjutnya:
+**User Story \# 5** - Di dalam komponen `HeroWorkout.vue` buatlah *container* (bisa berupa elemen `<div>` yang diberikan class atau container bawaan dari css framework yang digunakan) untuk menampung semua card yang berisi heroes workout. Selanjutnya:
 
 1. **Container nantinya akan digunakan untuk menampung semua card Heroes Workout** yang ada terdapat pada JSON. Contoh container yang sudah diisikan semua card tampilannya akan seperti ini:
 
@@ -154,31 +154,39 @@ Contoh tampilan gabungan komponen `Header.vue` dan `Body.vue` nya adalah sebagai
 3. **Setiap data Heroes Workout ditampilkan dengan card** yang berisikan:
 
     * Nama workout
-    * Deskripsi workout
+    * Deskripsi workout (muncul jika hamburger button diclick)
     * Button **Details**
 
     Contoh tampilan gabungan komponen `Header.vue` dan `HeroWorkout.vue` (jika data hero workoutnya hanya ada 3, dengan title: Bat Ability, Bat Punch, dan Steel Muscle) adalah sebagai berikut:
 
     ![Details](img/2-3.png)
 
-4. Saat mengklik button **Details**, My Fitness Companion menampilkan ***popup modal box*** yang berisikan **Workout Title**, **deskripsi singkat workout**, dan **exercise data** melalui API berdasarkan ID menggunakan route `/heroes/:heroId`.
+    Jika hamburger button **Bat Punch** workout diklik, memunculkan detail workout seperti ini:
 
-    Di bawah ini adalah contoh tampilan salah satu hero workout dengan popup modal berdasarkan ID ketika user mengklik details. Gambar di bawah ini memiliki:
-    * **Workout title**: Green Smash
-    * **Deskripsi singkat**: Dedicated to strength and dicipline building
-    * **Exercise data**: Exercise, Warm Up, Working Sets, dan Rest Period (yang masing-masing ada 3 data di dalamnya)
-    ![Details2](img/screen-shot-2019-10-24-at-17.56.40.png)
+    ![Details](img/2-3.1.png)
+
+    > Hamburger button untuk menampilkan detail sifatnya **opsional**, boleh juga ditampilkan langsung di cardnya masing-masing.
+
+4. Saat mengklik button **"Details"**, My Fitness Companion menampilkan ***popup modal box*** yang berisikan **Workout Title**, **deskripsi singkat workout**, dan **exercise** melalui API berdasarkan ID menggunakan route `/heroes/:heroId`.
+
+    > ***Tips and trick:*** Kamu harus menggunakan `vue-router` untuk menampilkan detail dari masing-masng card. Untuk melihat *step by step* penggunaannya silahkan tonton [video ini](https://www.youtube.com/watch?v=nnVVOe7qdeQ).
+
+    Di bawah ini adalah contoh tampilan salah satu modal dari card ketika user mengklik details. Tampilan di bawah ini memiliki:
+    * **Workout title**: Steel Muscle
+    * **Exercise Data**: Exercise, Warm Up, Working Sets, dan Rest Period
+
+    ![Details2](img/2-4.png)
 
     Contoh struktur json yang bisa digunakan untuk menampung datanya adalah sebagai berikut:
 
-    ```json
-    Heros: [
+    ```js
+    const Heroes: [
         {
             Id: 1,
             WorkoutTitle: "Green Smash",
             DeskripsiSingkat: "Dedicated to strength and dicipline building",
-            ExcerciseData: [
-            {
+            ExcerciseData:
+            [{
                 Exercise: "Incline Barbell Bench Press",
                 WarmUp: "2 x 10-15",
                 WorkingSets: "3 x 4-8",
@@ -208,20 +216,20 @@ Contoh tampilan gabungan komponen `Header.vue` dan `Body.vue` nya adalah sebagai
 
     State di vue:
 
-    ```json
+    ```js
     Data: {
-        Heros: []
+        Heroes: []
     }
     ```
 
-5. **Menampilkan workout card yang benar, pada saat mengetik workout tertentu pada search form** di bagian atas dari komponen `HeroWorkout.vue`.
+5. **Menampilkan workout card yang sesuai, pada saat user mengetikkan sesuatu pada search form** di bagian pojok kanan atas dari komponen `HeroWorkout.vue`.
 
-**User Story \# 7** - Komponen `PersonalWorkout.vue` harus memiliki:
+**User Story \# 6** - Di dalam komponen `PersonalWorkout.vue` buatlah *container* (bisa berupa elemen `<div>` yang diberikan class atau container bawaan dari css framework yang digunakan) untuk menampung semua list yang berisi personal workout. Selanjutnya:
 
-1. File json dan state untuk menampung data sementara baik dari form atau dari API. Contoh struktur json yang bisa digunakan untuk menampung datanya adalah sebagai berikut:
+1. Bauatlah **data personal workout di dalam JSON** dan **state untuk menampung data sementara** dari API. Contoh struktur JSON yang bisa digunakan untuk menampung datanya adalah sebagai berikut:
 
-    ```json
-    Personals: [
+    ```js
+    const Personals: [
         {
             Id: 1,
             Workout: "Incline Barbell Bench Press"
@@ -241,29 +249,29 @@ Contoh tampilan gabungan komponen `Header.vue` dan `Body.vue` nya adalah sebagai
 
     State di vue:
 
-    ```json
+    ```js
     Data: {
         Personals: []
     }
     ```
 
-2. **Form dengan input text** untuk memasukkan workout baru ke data di json melalui API dengan route POST `/personals`, serta **button submit** untuk mengirim datanya.
+2. Kamu harus mem-fetch atau mengambil data Heroes Workout melalui API/URL yang telah dibuat di express.js menggunakan axios. Kemudian tampilkan seluruh isinya di container yang telah dibuat, menggunakan perulangan. Sehingga semua list akan otomatis tampil sebanyak data workout yang ada di dalam JSON. Contoh list yang ditembak ke dalam div dengan `id="workoutlist"` sebagai container, menggunakan `v-for` dapat dilihat pada gambar di bawah ini:
 
-3. **Memiliki `class="workoutList"`** untuk menampung semua data personal workout, yang di-fetch dari API dengan route GET `/personals`. Dan tampilkan semua datanya dengan menggunakan `v-for`.
+    ![v-for](img/2-8.png)
 
-    Di bawah ini adalah contoh tampilan dari gabungan komponen `Navbar.vue`, `Judul.vue`, dan `PersonalWorkout.vue`: ![ToDo](img/screen-shot-2019-10-24-at-18.09.34.png)
+    * Pada contoh di atas `v-for` menampilkan semua item yang tersimpan di dalam workout, yang sudah diisikan data dari API terlebih dahulu. Pastikan di dalam Vue sudah terdapat attribute dengan nama workout seperti ini `data: {workout: [],}`.
 
-4. Saat mengklik button submit (dalam gambar add), data baru dari input text harus ditampilkan pada bagian `class="workoutList"`.
+    * Fungsi `.slice().reverse()` digunakan untuk membalik urutan workout dari *ascending* menjadi *descending*. Artinya, workout ditampilkan dengan urutan terbalik, dari urutan terbawah hingga teratas.
 
-5. Data yang baru pada list yang sudah ada, harus memiliki `key` yang sesuai dengan `Id` di file json. Sehingga, ketika salah satu workout list dicentang checkbox-nya, akan menampilkan data berdasarkan id menggunakan route GET `/personals/:personalId` ke input text dan **mengganti button submit menjadi button update, delete, dan close**.
+    Di bawah ini adalah contoh tampilan dari gabungan komponen `Header.vue` dan `PersonalWorkout.vue`:
 
-    * Ketika button update diklik akan menjalankan route PUT `/personals/:personalId` untuk **mengupdate datanya berdasarkan id**
-    * Ketika button delete diklik akan menjalankan route DELETE `/personals/:personalId` untuk **menghapus datanya berdasarkan id**
-    * Ketika button close diklik **data tidak jadi dirubah** dan **kembali menampilkan button submit saja**
+    ![ToDo](img/2-9.png)
 
-6. Workout baru yang ditambahkan harus diposisikan di atas workout lama, dengan increment ID baru berdasarkan ID terakhir. Ini bisa dilakukan dengan mengatur urutan ID berdasarkan ID terakhir (descanding).  
+3. Data pada list yang sudah ada, harus memiliki `key` yang sesuai dengan `Id` di JSON.
 
-7. Setiap workout yang ditampilkan di workout list **harus memiliki checkbox**.
+4. Workout baru yang ditambahkan harus diposisikan di atas workout lama, dengan increment ID baru berdasarkan ID terakhir. Ini bisa dilakukan dengan mengatur urutan ID berdasarkan ID terakhir (descanding). Salah satunya bisa menggunakan fungsi `.slice().reverse()`.
+
+5. Setiap workout yang ditampilkan di workout list **harus memiliki checkbox**.
 
 ### Projects Submission
 
