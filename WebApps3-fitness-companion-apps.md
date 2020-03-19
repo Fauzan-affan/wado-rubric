@@ -74,11 +74,15 @@ Dalam aplikasi ini, main page akan:
 
     * Setiap workout **berisikan gambar, judul workout, dan button "details"**.
 
-    Ketika **button details diklik:**
+    * Workout boleh berbentuk **modal** atau **page** (pilih salah satu)
+
+    Ketika button details diklik, dan memunculkan **modal:**
 
     ![Hero Modal](img/2-4.png)
 
-    * Ketika button "details" diklik, akan **muncul judul dan daftar gerakan** yang harus dilakukan.
+    Ketika button details diklik, dan memunculkan **page:**
+
+    ![Hero Page Detail](img/2-10.png)
 
 4. Halaman Heroes Workout juga memiliki **search form**, di mana search form ini berguna untuk mencari Heroes Workout tertentu dan melihat detailnya, seperti gambar di bawah ini:
 
@@ -167,15 +171,17 @@ Contoh tampilan gabungan komponen `Header.vue` dan `Body.vue` nya adalah sebagai
 
     > Hamburger button untuk menampilkan detail sifatnya **opsional**, boleh juga ditampilkan langsung di cardnya masing-masing.
 
-4. Saat mengklik button **"Details"**, My Fitness Companion menampilkan ***popup modal box*** yang berisikan **Workout Title**, **deskripsi singkat workout**, dan **exercise** melalui API berdasarkan ID menggunakan route `/heroes/:heroId`.
+4. Saat mengklik button **"Details"**, My Fitness Companion menampilkan ***popup modal box*** atau **page baru** yang berisikan **Workout Title**, **deskripsi singkat workout**, dan **exercise** melalui API berdasarkan ID menggunakan route `/heroes/:heroId`.
 
     > ***Tips and trick:*** Kamu harus menggunakan `vue-router` untuk menampilkan detail dari masing-masng card. Untuk melihat *step by step* penggunaannya silahkan tonton [video ini](https://www.youtube.com/watch?v=nnVVOe7qdeQ).
 
-    Di bawah ini adalah contoh tampilan salah satu modal dari card ketika user mengklik details. Tampilan di bawah ini memiliki:
-    * **Workout title**: Steel Muscle
-    * **Exercise Data**: Exercise, Warm Up, Working Sets, dan Rest Period
+    Contoh tampilan salah satu **modal** dari card ketika user mengklik details:
 
     ![Details2](img/2-4.png)
+
+    Contoh tampilan salah satu **page** dari card ketika user mengklik details:
+
+    ![Details2](img/2-10.png)
 
     Contoh struktur json yang bisa digunakan untuk menampung datanya adalah sebagai berikut:
 
@@ -300,26 +306,24 @@ Jika semua hal di atas terpenuhi, projek kamu sudah bisa di-submit.
 | Application Setup |  |
 | :--- | :--- |
 | CRITERIA | SPECIFICATIONS |
-| Apakah aplikasi ini mudah diatur? | Aplikasi ini dibuat dengan CSS dan JS terpisah di setiap folder. Index.html adalah entry point menuju website. |
+| Apakah aplikasi ini mudah diatur? | Aplikasi ini dibuat dengan CSS dan JS terpisah di setiap folder. Index.html adalah entry point menuju website. Lebih baik lagi jika website ini berbebntuk SPA |
 | Apakah aplikasi memiliki README dengan panduan instalasi dan penggunaan yang jelas? | README yang ter-update sudah termasuk pada aplikasi ini, di mana README ini menjelaskan proyek, serta memberikan instruksi untuk me-maintain dan memodifikasi proyek. |
 
 | Personal Workout Page |  |
 | :--- | :--- |
 | CRITERIA | SPECIFICATIONS |
-| Apakah halaman Personal Workout menampilkan form input? | Halaman Personal Workout menampilkan form, di mana form tersebut berbentuk workout input dan button add. |
+| Apakah halaman Personal Workout menampilkan checkbox dengan semua data Personal Workout nya? | Halaman Personal Workout menampilkan list semua data Personal Workout, di mana list tersebut berbentuk checkbox yang isinya semua data Personal Workout, dan bisa diklik. |
 
 | Heroes Workout Page |  |
 | :--- | :--- |
 | CRITERIA | SPECIFICATIONS |
 | Apakah halaman Heroes menunjukkan daftar Heroes Workout? | The Heroes Page menunjukkan daftar semua workout. Setiap workout menunjukkan konten yang benar, title, dan button detail. |
-| Apakah Heroes Page memiliki search bar? | Ya, search bar terletak di navigation bar (di bagian atas halaman). |
+| Apakah Heroes Page memiliki search bar? | Ya, Heroes Work harus mempunyai search bar. |
 
 | Code Functionality |  |
 | :--- | :--- |
 | CRITERIA | SPECIFICATIONS |
 | Apakah search berfungsi? | Fungsi search pada search bar bekerja saat user mengetik karakter apapun pada search bar. Di saat yang sama, workout yang muncul akan ter-filter sesuai dengan input tadi. |
-| Apakah button detail pada Heroes Workout bekerja? | Button tersebut akan bekerja ketika ada interaksi yang menampilkan modal, di mana modal tersebut berisikan detail dari Heroes Workout. |
-| Apakah add workout pada Personal Workout bekerja? | User dapat meng-input jenis-jenis workout di input form. Saat mengklik add, value baru akan muncul sesuai dengan input. |
-| Apakah checkbox pada Personal Workout bekerja? | User dapat berinteraksi dengan checkbox di setiap workout pada halaman Personal Workout. Saat mengklik checkbox, font yang ada akan menjadi strikethrough. |
-| Apakah halaman navigasi bekerja? | User dapat bernavigasi dari main page ke Personal ataupun Heroes Workout tanpa halangan. Proses tersebut dapat dilakukan secara terbalik. |
+| Apakah button detail pada Heroes Workout bekerja? | Button tersebut akan bekerja ketika ada interaksi yang menampilkan modal ataupun page baru, di mana modal dan page tersebut berisikan detail dari Heroes Workout. |
+| Apakah halaman navigasi bekerja? | User dapat bernavigasi dari main page ke Personal ataupun Heroes Workout tanpa halangan. Begitu juga sebaliknya. |
 | Apakah kode yang ada berjalan tanpa error? | Ya, kode yang ada dapat berjalan tanpa error. Tidak ada peringatan yang menunjukkan tanda error, karena daftar yang ada pada dokumentasi sudah termasuk best practice. Semua kode bersifat fungsional dan terformat dengan baik. |
