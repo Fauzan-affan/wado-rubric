@@ -281,19 +281,9 @@ Contoh tampilan gabungan komponen `Header.vue` dan `Body.vue` nya adalah sebagai
 
 ### Projects Submission
 
-#### Instructions
-
-Cek kembali apakah projek kamu sudah mengikuti style guideline kami terkait HTML, CSS, JavaScript dan Git.
-
-Jika kamu memilih untuk menggunakan laptop/pc pribadi:
-
-* Push projek kamu ke GitHub dan pastikan yang kamu push adalah master branch.
-* Pada halaman project submission, pilih "Submit with GitHub"
-* Tentukan repository untuk projek ini \(kemungkinan kamu perlu menghubungkan akun GitHub terlebih dulu\).
-
 #### Project Submission Checklist
 
-Sebelum submit proyek kamu, cek ulang dan pastikan kamu mengerti poin-poin berikut ini:
+> **Untuk bisa lulus di projek ini, kamu harus memenuhi minimal 12 dari 14 kriteria**
 
 * Saya yakin semua item rubrik yang ada telah sesuai persyaratan dan proyek saya akan lolos untuk di-review \(Jika tidak, saya akan berdiskusi dengan mentor sebelum men-submit.\)
 * Project dibuat dengan benar tanpa error.
@@ -308,6 +298,11 @@ Jika semua hal di atas terpenuhi, projek kamu sudah bisa di-submit.
 | CRITERIA | SPECIFICATIONS |
 | Apakah aplikasi ini mudah diatur? | Aplikasi ini dibuat dengan CSS dan JS terpisah di setiap folder. Index.html adalah entry point menuju website. Lebih baik lagi jika website ini berbebntuk SPA |
 | Apakah aplikasi memiliki README dengan panduan instalasi dan penggunaan yang jelas? | README yang ter-update sudah termasuk pada aplikasi ini, di mana README ini menjelaskan proyek, serta memberikan instruksi untuk me-maintain dan memodifikasi proyek. |
+| Apakah aplikasi menggunakan vue-router? | Vue-router digunakan untuk menampilkan detail dari card yang ada di Heroes Workout. |
+| Apakah aplikasi menerapkan konsep SPA (Single Page Aplication) pada vue? | SPA menggunakan component base dalam pembangunan user interfacenya, di mana semua component akan ditampilkan ke dalam single file yaitu index.html, sesuai kebutuhan. |
+| Apakah aplikasi menggunakan nodemon di express.js? | Nodemon menjadikan server otomatis direload setiap kali ada perubahan yang terjadi di sisi server. |
+| Apakah aplikasi menggunakan middleware CORS (Cross-origin resource sharing)? | CORS middleware digunakan untuk mengatasi perbedaan domain yang terjadi. Di mana jika tidak menggunakan CORS Middleware, ke dua aplikasi tidak bisa saling bertukar informasi. |
+| Apakah aplikasi menggunakan axios untuk mem-fetching data dari server? | Axios digunakan untuk menggantikan peran fetch API. Salah satu keuntungan menggunakan axios, website tidak perlu repot-repot lagi mengatur headers HTTP client untuk melakukan request ke server. |
 
 | Personal Workout Page |  |
 | :--- | :--- |
