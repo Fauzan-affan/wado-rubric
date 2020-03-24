@@ -282,3 +282,13 @@ Contoh tampilan gabungan komponen `Header.vue` dan `Body.vue` nya adalah sebagai
 4. Workout baru yang ditambahkan harus diposisikan di atas workout lama, dengan increment ID baru berdasarkan ID terakhir. Ini bisa dilakukan dengan mengatur urutan ID berdasarkan ID terakhir (descanding). Salah satunya bisa menggunakan fungsi `.slice().reverse()`.
 
 5. Setiap workout yang ditampilkan di workout list **harus memiliki checkbox**.
+
+## Assignment Submission
+
+Sebelum mengumpulkan assignment ini ada beberapa hal yang perlu diperhatikan, yaitu:
+
+* Saya yakin semua user story yang ada telah sesuai dan assignment saya akan lolos untuk di-review \(Jika tidak, saya akan berdiskusi dengan mentor via live chat sebelum men-submit.\)
+* Assignment dibuat dengan benar tanpa error.
+* Semua kebutuhan fungsional terpenuhi dan assignment saya mampu berjalan sesuai dengan kebutuhan.
+
+Jika semua hal di atas terpenuhi, assignment kamu sudah bisa **di-submit ke Github masing-masing**, dan **kirimkan link Github tersebut ke mentor via live chat**.
