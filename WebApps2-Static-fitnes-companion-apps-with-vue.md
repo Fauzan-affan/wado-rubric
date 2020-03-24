@@ -292,3 +292,5 @@ Sebelum mengumpulkan assignment ini ada beberapa hal yang perlu diperhatikan, ya
 * Semua kebutuhan fungsional terpenuhi dan assignment saya mampu berjalan sesuai dengan kebutuhan.
 
 Jika semua hal di atas terpenuhi, assignment kamu sudah bisa **di-submit ke Github masing-masing**, dan **kirimkan link Github tersebut ke mentor via live chat**.
+
+> Perlu diperhatikan, **bahwasannya assignment ini akan berhubungan dengan project pada course ke 3** nanti. Assignment ini akan menjadi bagian **frontend dari project 3** tersebut.
