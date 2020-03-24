@@ -145,7 +145,7 @@ Contoh tampilan gabungan komponen `Header.vue` dan `Body.vue` nya adalah sebagai
 
 **User Story \# 5** - Di dalam komponen `HeroWorkout.vue` buatlah *container* (bisa berupa elemen `<div>` yang diberikan class atau container bawaan dari css framework yang digunakan) untuk menampung semua card yang berisi heroes workout. Selanjutnya:
 
-1. **Container nantinya akan digunakan untuk menampung semua card Heroes Workout** yang ada terdapat pada JSON. Contoh container yang sudah diisikan semua card tampilannya akan seperti ini:
+1. **Container nantinya akan digunakan untuk menampung semua card Heroes Workout** yang terdapat pada JSON. Contoh container yang sudah diisikan semua card tampilannya akan seperti ini:
 
     ![container](img/2-6.png)
 
